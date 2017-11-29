@@ -9,7 +9,7 @@ import Drag from './drag';
 ```
 或者
 ```
-const Drag require('./drag').default;
+const Drag = require('./drag').default;
 ```
 
 
