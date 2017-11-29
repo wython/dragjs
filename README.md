@@ -55,5 +55,7 @@ const opts = {
 	left: null,              //初始位置，若不指定，则为元素本身所在位置
 	container: 'containerId' //与addContainer方法相同作用
 }
+new Drag(target, opts)
+    .start();
 ```
 
