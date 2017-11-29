@@ -37,7 +37,7 @@ new Drag(target)
     .start();
 ```
 
-### 父容器移动
+#### 父容器移动
 ```
 //target为触发事件元素，container为移动的元素
 
@@ -46,7 +46,7 @@ new Drag(target)
 	.start()
 ```
 
-### 可选options
+#### 可选options
 ```
 const opts = {
 	targetType:　'all',      //默认'all', 支持'x':沿x轴, 'y'：沿y轴, 'all'
