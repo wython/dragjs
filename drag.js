@@ -19,7 +19,7 @@ function onMouseDown(e) {
   this.currentY = e.clientY;
 
   this.downFn.forEach((fn) => {
-    fn(e);
+    fn && fn(e);
   })
 }
 
@@ -35,7 +35,7 @@ function onMouseUp(e) {
   this.currentTop = this.getTop();
 
   this.upFn.forEach((fn) => {
-    fn(e);
+    fn && fn(e);
   })
 }
 
@@ -53,7 +53,6 @@ function onMouseMoving(e) {
   let disY = nowY - this.currentY;
 
   //window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
-
   switch (this.dragType) {
     case 'x':
       //保持y轴不变
@@ -127,9 +126,9 @@ Drag.prototype.initPosition = function () {
     //不固定，需要计算父级定位元素
     this.container.style.position = 'absolute';
     this.currentTop = this.container.offsetTop;
-    this.currentLeft = this.container.offsetLeft
+    this.currentLeft = this.container.offsetLeft;
   }
-  this.setPosition(this.currentTop, this.currentLeft);
+  this.setPosition(this.currentLeft, this.currentTop);
 };
 
 Drag.prototype.on = function (eventType, cb) {
